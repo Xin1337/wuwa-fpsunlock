@@ -36,4 +36,4 @@ You need to have Node.js installed on your machine. You can download it from [he
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
