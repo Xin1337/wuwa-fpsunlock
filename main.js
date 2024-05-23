@@ -6,6 +6,7 @@ const _        = require("underscore")
 
     class Main {
         constructor() {
+            
             this.r1 = readline.createInterface({
                 input: process.stdin,
                 output: process.stdout
@@ -16,6 +17,7 @@ const _        = require("underscore")
         }
 
         command() {
+
             this.r1.setPrompt("Xin1337> ");
             this.r1.prompt();
     
@@ -36,6 +38,7 @@ const _        = require("underscore")
                         console.log("Command not found");
                         break;
                 }
+
                 this.r1.prompt();
             })
         }
@@ -43,6 +46,7 @@ const _        = require("underscore")
         fps() {
 
             this.r1.question("Enter the location of the database file (e.g., C:\\WutheringWavesj3oFh\\Wuthering Waves Game\\Client\\Saved\\LocalStorage\\LocalStorage.db): ", (dbPath) => {
+
                 let db = new sqlite3.Database(dbPath, (err) => {
                     if (err) {
                         console.error(err.message);
@@ -71,17 +75,24 @@ const _        = require("underscore")
                         let updatedJson = JSON.stringify(parsedSetting);
                         
                         let updateQuery = "UPDATE LocalStorage SET value = ? WHERE key = 'GameQualitySetting';";
+
                         db.run(updateQuery, updatedJson, function(error) {
+
                             if (error) {
                                 console.error(error.message);
                                 throw error;
                             }
-                            console.log("Frame rate updated to 120!");                        
+
+                            console.log("Frame rate updated to 120!");
+
                             db.close((error) => {
+
                                 if (error) {
+                                    
                                     console.error(error.message);
                                     throw error;
                                 }
+
                                 console.log('\nPress any key to exit...');
                                 process.exit();
                             });
