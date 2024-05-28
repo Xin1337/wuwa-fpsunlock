@@ -92,8 +92,7 @@ class Main {
                   throw error;
                 }
 
-                console.log("\nPress any key to exit...");
-                process.exit();
+                console.log("Database connection closed.");
               });
             });
           });
